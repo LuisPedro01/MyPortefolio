@@ -8,7 +8,8 @@ export const ProjectList = [
       image: Img2,
       skills: "HTML, CSS",
       description: "Website for a state agency",
-      github: "https://github.com/LuisPedro01/Projeto"
+      github: "https://github.com/LuisPedro01/Projeto",
+      link: "https://main--sucessfullasusual.netlify.app/index.html"
     },
     {
       name: "Weather App",
