@@ -1,4 +1,4 @@
-import Img1 from "../assets/ipb.png";
+import Img1 from "../assets/3.png";
 import Img2 from "../assets/suceesfull.png";
 import Img3 from "../assets/1.png"
 
@@ -20,8 +20,11 @@ export const ProjectList = [
       link: "https://myweather12.netlify.app/"
     },
     {
-      name: "Projecto 3",
+      name: "To Do List",
       image: Img1,
       skills: "React",
+      description: "To Do List",
+      github: "https://github.com/LuisPedro01/To-Do-List",
+      link: "https://myytodolistt.netlify.app"
     }    
   ];
