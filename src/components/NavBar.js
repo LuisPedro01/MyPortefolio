@@ -27,7 +27,7 @@ function NavBar() {
             <Link to="/aboutme">About</Link>
             <Link to="/experience"> Experience </Link>
             <Link to="/projects"> Projects </Link>
-            <Link to="/suport"> Suport </Link>
+            <Link to="/support"> Suport </Link>
 
         </div>
     </div>
