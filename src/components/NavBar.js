@@ -12,6 +12,8 @@ function NavBar() {
         setExpandNavBar(false);
     }, [location]);
 
+
+
   return (
     <div className='navbar' id={expandNavBar ? "open" : "close"}>
         <div className='toggleButton'> 
@@ -26,7 +28,7 @@ function NavBar() {
             <Link to="/experience"> Experience </Link>
             <Link to="/projects"> Projects </Link>
             <Link to="/suport"> Suport </Link>
-            
+
         </div>
     </div>
   );
