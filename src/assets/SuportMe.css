@@ -29,3 +29,32 @@
     font-size: 100px;
     cursor: pointer;
   }
+
+
+  @media (max-width: 600px) {
+    .suport1 h1{
+      font-size: 35px;
+    }
+    
+    .suport1 p {
+      font-size: 25px;
+    }
+  
+    .suport1 a {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .suport1 h1{
+      font-size: 28px;
+    }
+    
+    .suport1 p {
+      font-size: 25px;
+    }
+  
+    .suport1 a {
+      font-size: 20px;
+    }
+  }
