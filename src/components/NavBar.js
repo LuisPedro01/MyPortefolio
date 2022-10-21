@@ -17,12 +17,13 @@ function NavBar() {
   return (
     <div className='navbar' id={expandNavBar ? "open" : "close"}>
         <div className='toggleButton'> 
+      <p className='narrow'>Luís Rodrigues</p>
         <button onClick={() => {setExpandNavBar((prev) => !prev)}}>
              <ReorderIcon/> 
         </button>
         </div>
         <div className='links'>
-            <div className='name'> <Link to="/"> Luís Rodrigues </Link></div>
+            <div className='name'> <Link to="/"> <span className='hide'>Luís Rodrigues </span></Link></div>
             <Link to="/"> Home </Link>
             <Link to="/aboutme">About</Link>
             <Link to="/experience"> Experience </Link>
