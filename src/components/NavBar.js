@@ -19,7 +19,7 @@ function NavBar() {
   return (
     <div className='navbar' id={expandNavBar ? "open" : "close"}>
         <div className='toggleButton'> 
-      <p className='narrow'><img src={Logo2} className="img"/></p>
+      <p className='narrow'><img src={Logo2} className="img"/></p>  
         <button onClick={() => {setExpandNavBar((prev) => !prev)}}>
              <ReorderIcon/> 
         </button>

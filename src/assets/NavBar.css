@@ -63,10 +63,6 @@
   #open {
     height: 90vh;
   }
-
-  #open .navbar{
-    content: "Luís Rodrigues";
-  }
   
   #open .links {
     flex-direction: column;
@@ -109,18 +105,6 @@
     .hiddenLinks {
       display: none;
     }
-  
-    #open {
-      height: 100px;
-    }
-
-    #open.navbar{
-      height: 500px;
-      margin-top: 5px;
-    } 
-    
-    
-
   }
 
   #open .hide{
@@ -128,15 +112,11 @@
   }
 
   .narrow{
-    width: 100%;
-    
+    width: 200px;
     padding-right: 120px;
-
   }
 
   .img{
     height: 30px;
-    width: 120px;
-    cursor: pointer;
-    background-color: none;
+    width: 150px;
   }  
