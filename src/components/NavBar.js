@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "../assets/NavBar.css"
 import ReorderIcon from "@material-ui/icons/Reorder"
 import Logo from "../assets/logo5.png"
+import Logo2 from "../assets/logo2.png"
 
 function NavBar() {
     const [expandNavBar, setExpandNavBar] =useState(false);
@@ -18,7 +19,7 @@ function NavBar() {
   return (
     <div className='navbar' id={expandNavBar ? "open" : "close"}>
         <div className='toggleButton'> 
-      <p className='narrow'><img src={Logo} className="img"></img></p>
+      <p className='narrow'><img src={Logo2} className="img"></img></p>
         <button onClick={() => {setExpandNavBar((prev) => !prev)}}>
              <ReorderIcon/> 
         </button>
