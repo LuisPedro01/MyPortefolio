@@ -2,6 +2,7 @@
     width: 100%;
     height: 10%;
     background: white;
+    justify-content: space-between;
   } 
   
   .links {
@@ -52,12 +53,14 @@
   .toggleButton svg {
     font-size: 50px;
   }
+  
   .toggleButton button {
     margin-right: 20px;
     background-color: transparent;
     border: none;
     color: white;
     cursor: pointer;
+    display: flex;
   }
   
   #open {
@@ -87,7 +90,6 @@
     }
 
     .toggleButton {
-      display: flex;
       background-color: #417df7;
     }
     #close a {
@@ -111,9 +113,10 @@
     display: none;
   }
 
-  .narrow{
-    width: 200px;
-    padding-right: 120px;
+  .logo{
+    width: 100%;
+    position: absolute;
+    left: -25%;
   }
 
   .img{
