@@ -117,7 +117,9 @@
     #open.navbar{
       height: 500px;
       margin-top: 5px;
-    }  
+    } 
+    
+    
 
   }
 
@@ -126,8 +128,15 @@
   }
 
   .narrow{
-    font-size: 25px;
-    color: white;
+    width: 100%;
+    
     padding-right: 120px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
   }
+
+  .img{
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+    background-color: none;
+  }  
