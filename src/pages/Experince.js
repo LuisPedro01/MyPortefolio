@@ -71,7 +71,7 @@ function Experince() {
             src={require("../assets/logoVISORAI.webp")}
             alt="VISOR"
             height={250}
-            width={200}
+            width={400}
           />
         </VerticalTimelineElement>
       </VerticalTimeline>
