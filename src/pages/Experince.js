@@ -43,7 +43,7 @@ function Experince() {
 
         <VerticalTimelineElement
           className="vertical-timeline-elemental--education"
-          date="2019-today"
+          date="2023-today"
           iconStyle={{ background: "#3e497a", color: "#fff" }}
           icon={<SchoolIcon />}
         >
