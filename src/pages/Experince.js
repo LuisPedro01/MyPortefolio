@@ -5,6 +5,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { School } from "@mui/icons-material";
+import { Work } from "@mui/icons-material";
 // import SchoolIcon from "@material-ui/icons/School";
 
 function Experince() {
@@ -64,7 +65,7 @@ function Experince() {
           className="vertical-timeline-elemental--education"
           date="September 2023-today"
           iconStyle={{ background: "#3e497a", color: "#fff" }}
-          icon={<School />}
+          icon={<Work />}
         >
           <h3 className="vertical-timeline-element-title">Visor-AI</h3>
           <p>Junior Software Developer</p>

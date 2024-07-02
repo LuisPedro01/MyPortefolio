@@ -33,6 +33,13 @@
     font-size: 60px;
     margin: 5px;
     color: white;
+    border-radius: 12px;
+  }
+
+  .prompt svg:hover {
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in;
+    cursor: pointer;
   }
   
   .skills {
