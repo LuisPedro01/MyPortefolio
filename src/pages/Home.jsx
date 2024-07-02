@@ -18,55 +18,57 @@ import ImageCSS from '../assets/css.png'
 import ImageStyled from '../assets/styled.png'
 import ImageVue from '../assets/vue.png'
 import ImageReactNative from '../assets/native.png'
+import ImageReactC from '../assets/c-sharp.webp'
+import ImagePython from '../assets/python.png'
 
 function Home() {
   return (
     <div className='home'>
-      <div className='about'>        
+      <div className='about'>
         <h1>Luís Rodrigues</h1>
         <div className='prompt'>
           <p>Student & Developer</p>
-          <a href='https://www.linkedin.com/in/lu%C3%ADs-rodrigues-592413235' target="_blank"><LinkedIn/></a>
-          <a href='https://github.com/LuisPedro01' target="_blank"><GitHub/></a>
-          <a href='mailto:luisprodrigues01@gmail.com' target="_blank"><Mail/></a>  
+          <a href='https://www.linkedin.com/in/lu%C3%ADs-rodrigues-592413235' target="_blank"><LinkedIn /></a>
+          <a href='https://github.com/LuisPedro01' target="_blank"><GitHub /></a>
+          <a href='mailto:luisprodrigues01@gmail.com' target="_blank"><Mail /></a>
+        </div>
       </div>
-    </div>
 
       <div className='skills'>
         <h1>Skills</h1>
-        <ol className='list'>
-            <li className='item'>
-              <h2> Front-End </h2>
-              {/* <span> HTML, CSS, React Native, React, Typescript,  </span> */}
-              <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px'}}>
-                <BasicCard
-                  title='Professional Experience'
-                  subtitle='Front-End'
-                  textSecondary='HTML, CSS, React'
-                />
-                <BasicCard
-                  title='Acamical Experience'
-                  subtitle='Front-End'
-                  textSecondary='HTML, CSS, React Native, React, Vue.js'
-                />
-              </div>
-              <h2> Back-End </h2>
-              {/* <span> HTML, CSS, React Native, React, Typescript,  </span> */}
-              <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px'}}>
-                <BasicCard
-                  title='Professional Experience'
-                  subtitle='Back-End'
-                  textSecondary='Node.js, Typescript, MongoDB'
-                />
-                <BasicCard
-                  title='Acamical Experience'
-                  subtitle='Back-End'
-                  textSecondary='SQL'
-                />
-              </div>
-            </li>
-            <li className='languages'>
-              <h2> Tecnologies and Tools </h2>
+        <div className='list'>
+          <div className='item'>
+            <h2> Front-End </h2>
+            {/* <span> HTML, CSS, React Native, React, Typescript,  </span> */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
+              <BasicCard
+                title='Professional Experience'
+                subtitle='Front-End'
+                textSecondary='HTML, CSS, React'
+              />
+              <BasicCard
+                title='Acamical Experience'
+                subtitle='Front-End'
+                textSecondary='HTML, CSS, React Native, React, Vue.js'
+              />
+            </div>
+            <h2> Back-End </h2>
+            {/* <span> HTML, CSS, React Native, React, Typescript,  </span> */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
+              <BasicCard
+                title='Professional Experience'
+                subtitle='Back-End'
+                textSecondary='Node.js, Typescript, MongoDB'
+              />
+              <BasicCard
+                title='Acamical Experience'
+                subtitle='Back-End'
+                textSecondary='SQL'
+              />
+            </div>
+          </div>
+          <div className='languages'>
+            <h2> Tecnologies and Tools </h2>
             <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: '1fr 1fr 1fr', placeItems: 'center' }}>
               <SmallCard
                 url={ImageReact}
@@ -120,9 +122,17 @@ function Home() {
                 url={ImageReactNative}
                 framework='React Native'
               />
+              <SmallCard
+                url={ImageReactC}
+                framework='C#'
+              />
+              <SmallCard
+                url={ImagePython}
+                framework='Python'
+              />
             </div>
-            </li>
-        </ol>
+          </div>
+        </div>
       </div>
     </div>
   )
