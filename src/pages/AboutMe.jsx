@@ -35,12 +35,12 @@ function AboutMe() {
 
   return (
     <div className='aboutme'>
-        <div className='about1'>
-            <h1 ref={el => refs.current[0] = el} className='fade-in'>Hey!</h1>    
-            <p ref={el => refs.current[1] = el} className='fade-in'>I'm Luís Rodrigues from Portugal!<br/>I love programming, and learning new things!
-            Feel free to get in touch or take a look to some of my work.</p>
-        </div>
-        
+      <div className='about1'>
+        <h1 ref={el => refs.current[0] = el} className='fade-in'>Hey!</h1>
+        <p ref={el => refs.current[1] = el} className='fade-in'>I'm Luís Rodrigues from Portugal!<br />I love programming, and learning new things!
+          Feel free to get in touch or take a look to some of my work.</p>
+      </div>
+
     </div>
   )
 }
