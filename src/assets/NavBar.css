@@ -41,6 +41,16 @@
     justify-content: center;
     align-items: center;
   }
+
+  .navbar a:hover {
+    color: #1c91ff;
+    text-decoration: underline;
+  }
+
+  .navbar a.active {
+    color: #1c91ff;
+    text-decoration: underline;
+}
   
   .toggleButton {
     width: 100%;
