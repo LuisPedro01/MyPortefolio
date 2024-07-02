@@ -4,6 +4,20 @@ import { GitHub } from '@mui/icons-material';
 import { Mail } from '@mui/icons-material';
 import "../assets/Home.css";
 import BasicCard from '../components/BasicCard';
+import SmallCard from '../components/SmallCard';
+import ImageReact from '../assets/react.png'
+import ImageNode from '../assets/node.png'
+import ImageTypescript from '../assets/typescript.png'
+import ImageMySQL from '../assets/mysql.png'
+import ImagePostman from '../assets/postman.png'
+import ImageFirebase from '../assets/firebase.png'
+import ImageGit from '../assets/git.png'
+import ImageJira from '../assets/jira.png'
+import ImageHTML from '../assets/html.png'
+import ImageCSS from '../assets/css.png'
+import ImageStyled from '../assets/styled.png'
+import ImageVue from '../assets/vue.png'
+import ImageReactNative from '../assets/native.png'
 
 function Home() {
   return (
@@ -51,13 +65,62 @@ function Home() {
                 />
               </div>
             </li>
-            <li className='item'>
-              <h2> Languages </h2>
-              <BasicCard
-                  title='Acamical/Professional Experience'
-                  subtitle='Frameworks'
-                  textSecondary='JavaScript, C#, C, C++, Python, '
-                />
+            <li className='languages'>
+              <h2> Tecnologies and Tools </h2>
+            <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: '1fr 1fr 1fr', placeItems: 'center' }}>
+              <SmallCard
+                url={ImageReact}
+                framework='React'
+              />
+              <SmallCard
+                url={ImageNode}
+                framework='Node.js'
+              />
+              <SmallCard
+                url={ImageTypescript}
+                framework='Typescript'
+              />
+              <SmallCard
+                url={ImageMySQL}
+                framework='MySQL'
+              />
+              <SmallCard
+                url={ImagePostman}
+                framework='Postman'
+              />
+              <SmallCard
+                url={ImageFirebase}
+                framework='Firebase'
+              />
+              <SmallCard
+                url={ImageGit}
+                framework='Git'
+              />
+              <SmallCard
+                url={ImageJira}
+                framework='Jira'
+              />
+              <SmallCard
+                url={ImageHTML}
+                framework='HTML'
+              />
+              <SmallCard
+                url={ImageCSS}
+                framework='CSS'
+              />
+              <SmallCard
+                url={ImageStyled}
+                framework='Styled-Components'
+              />
+              <SmallCard
+                url={ImageVue}
+                framework='Vue.js'
+              />
+              <SmallCard
+                url={ImageReactNative}
+                framework='React Native'
+              />
+            </div>
             </li>
         </ol>
       </div>
