@@ -1,33 +1,63 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
 import { LinkedIn } from '@mui/icons-material';
 import { GitHub } from '@mui/icons-material';
 import { Mail } from '@mui/icons-material';
 import "../assets/Home.css";
 import BasicCard from '../components/BasicCard';
 import SmallCard from '../components/SmallCard';
-import ImageReact from '../assets/react.png'
-import ImageNode from '../assets/node.png'
-import ImageTypescript from '../assets/typescript.png'
-import ImageMySQL from '../assets/mysql.png'
-import ImagePostman from '../assets/postman.png'
-import ImageFirebase from '../assets/firebase.png'
-import ImageGit from '../assets/git.png'
-import ImageJira from '../assets/jira.png'
-import ImageHTML from '../assets/html.png'
-import ImageCSS from '../assets/css.png'
-import ImageStyled from '../assets/styled.png'
-import ImageVue from '../assets/vue.png'
-import ImageReactNative from '../assets/native.png'
-import ImageReactC from '../assets/c-sharp.webp'
-import ImagePython from '../assets/python.png'
+import ImageReact from '../assets/react.png';
+import ImageNode from '../assets/node.png';
+import ImageTypescript from '../assets/typescript.png';
+import ImageMySQL from '../assets/mysql.png';
+import ImagePostman from '../assets/postman.png';
+import ImageFirebase from '../assets/firebase.png';
+import ImageGit from '../assets/git.png';
+import ImageJira from '../assets/jira.png';
+import ImageHTML from '../assets/html.png';
+import ImageCSS from '../assets/css.png';
+import ImageStyled from '../assets/styled.png';
+import ImageVue from '../assets/vue.png';
+import ImageReactNative from '../assets/native.png';
+import ImageReactC from '../assets/c-sharp.webp';
+import ImagePython from '../assets/python.png';
 
 function Home() {
+  const refs = useRef([]);
+
+  useEffect(() => {
+    const options = {
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+
+    refs.current.forEach(ref => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      refs.current.forEach(ref => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, []);
+
   return (
     <div className='home'>
       <div className='about'>
-        <h1>Luís Rodrigues</h1>
+        <h1 ref={el => refs.current[0] = el} className='fade-in'>Luís Rodrigues</h1>
         <div className='prompt'>
-          <p>Student & Developer</p>
+          <p ref={el => refs.current[1] = el} className='fade-in'>Student & Developer</p>
           <a href='https://www.linkedin.com/in/lu%C3%ADs-rodrigues-592413235' target="_blank"><LinkedIn /></a>
           <a href='https://github.com/LuisPedro01' target="_blank"><GitHub /></a>
           <a href='mailto:luisprodrigues01@gmail.com' target="_blank"><Mail /></a>
@@ -35,11 +65,10 @@ function Home() {
       </div>
 
       <div className='skills'>
-        <h1>Skills</h1>
+        <h1 ref={el => refs.current[2] = el} className='fade-in'>Skills</h1>
         <div className='list'>
           <div className='item'>
-            <h2> Front-End </h2>
-            {/* <span> HTML, CSS, React Native, React, Typescript,  </span> */}
+            <h2 ref={el => refs.current[3] = el} className='fade-in'> Front-End </h2>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
               <BasicCard
                 title='Professional Experience'
@@ -52,8 +81,7 @@ function Home() {
                 textSecondary='HTML, CSS, React Native, React, Vue.js'
               />
             </div>
-            <h2> Back-End </h2>
-            {/* <span> HTML, CSS, React Native, React, Typescript,  </span> */}
+            <h2 ref={el => refs.current[4] = el} className='fade-in'> Back-End </h2>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
               <BasicCard
                 title='Professional Experience'
@@ -68,7 +96,7 @@ function Home() {
             </div>
           </div>
           <div className='languages'>
-            <h2> Tecnologies and Tools </h2>
+            <h2 ref={el => refs.current[5] = el} className='fade-in'> Tecnologies and Tools </h2>
             <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: '1fr 1fr 1fr', placeItems: 'center' }}>
               <SmallCard
                 url={ImageReact}
@@ -138,4 +166,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;
