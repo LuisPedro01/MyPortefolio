@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from "react-router-dom"; 
 import "../assets/NavBar.css"
-import ReorderIcon from "@material-ui/icons/Reorder"
+import { Reorder } from '@mui/icons-material';
+// import ReorderIcon from "@material-ui/icons/Reorder"
 import Logo from "../assets/Logo6.png"
 import Logo2 from "../assets/logo3.png"
 
@@ -21,7 +22,7 @@ function NavBar() {
         <div className='toggleButton'> 
         <div className='logo'><img src={Logo2} className="img"/></div>            
         <button onClick={() => {setExpandNavBar((prev) => !prev)}}>
-             <ReorderIcon/> 
+             <Reorder/> 
         </button>
         </div>
         <div className='links'>

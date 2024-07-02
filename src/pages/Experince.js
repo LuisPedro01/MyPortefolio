@@ -4,7 +4,8 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import SchoolIcon from "@material-ui/icons/School";
+import { School } from "@mui/icons-material";
+// import SchoolIcon from "@material-ui/icons/School";
 
 function Experince() {
   return (
@@ -14,7 +15,7 @@ function Experince() {
           className="vertical-timeline-elemental--education"
           date="2007-2019"
           iconStyle={{ background: "#3e497a", color: "#fff" }}
-          icon={<SchoolIcon />}
+          icon={<School />}
         >
           <h3 className="vertical-timeline-element-title">
             Escola Básica e Secundária de Macedo de Cavaleiros
@@ -27,7 +28,7 @@ function Experince() {
           className="vertical-timeline-elemental--education"
           date="2019-2023"
           iconStyle={{ background: "#3e497a", color: "#fff" }}
-          icon={<SchoolIcon />}
+          icon={<School />}
         >
           <h3 className="vertical-timeline-element-title">
             Instituto Politécnico de Bragança
@@ -45,7 +46,7 @@ function Experince() {
           className="vertical-timeline-elemental--education"
           date="2023-today"
           iconStyle={{ background: "#3e497a", color: "#fff" }}
-          icon={<SchoolIcon />}
+          icon={<School />}
         >
           <h3 className="vertical-timeline-element-title">
             Instituto Politécnico de Viana do Castelo
@@ -63,7 +64,7 @@ function Experince() {
           className="vertical-timeline-elemental--education"
           date="September 2023-today"
           iconStyle={{ background: "#3e497a", color: "#fff" }}
-          icon={<SchoolIcon />}
+          icon={<School />}
         >
           <h3 className="vertical-timeline-element-title">Visor-AI</h3>
           <p>Junior Software Developer</p>

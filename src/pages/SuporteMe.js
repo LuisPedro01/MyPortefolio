@@ -1,5 +1,6 @@
 import React from "react";
-import MonetizationOnTwoToneIcon from "@material-ui/icons/MonetizationOnTwoTone";
+import { MonetizationOn } from "@mui/icons-material";
+// import MonetizationOnTwoToneIcon from "@material-ui/icons/MonetizationOnTwoTone";
 import "../assets/SuportMe.css";
 
 function SuportMe() {
@@ -10,7 +11,7 @@ function SuportMe() {
       </h1>
       <p>Donate to Ko-Fi</p>
       <a href="https://ko-fi.com/luisrodrigues66052" target="_blank">
-        <MonetizationOnTwoToneIcon />
+        <MonetizationOn />
       </a>
     </div>
   );

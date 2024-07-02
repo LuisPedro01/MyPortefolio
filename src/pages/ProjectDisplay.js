@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { ProjectList } from "../helpers/ProjectList";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import { GitHub } from '@mui/icons-material';
+// import GitHubIcon from "@material-ui/icons/GitHub";
 import "../assets/ProjectDisplay.css";
 
 function ProjectDisplay() {
@@ -20,7 +21,7 @@ function ProjectDisplay() {
       <p>
         <a href={project.link} target='_blank'><b>Link to website </b></a> 
       </p>
-      <a href={project.github} target='_blank'><GitHubIcon /></a>
+      <a href={project.github} target='_blank'><GitHub /></a>
       
     </div>
   );
