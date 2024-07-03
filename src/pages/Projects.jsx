@@ -4,6 +4,7 @@ import {ProjectList} from "../helpers/ProjectList";
 import { MasterProjectList } from '../helpers/MasterProjects';
 
 import "../assets/Projects.css"
+import { BachelorProjectList } from '../helpers/BachelorProjects';
 
 function Projects() {
   return (
@@ -17,7 +18,13 @@ function Projects() {
       <h1>Projects During Master's Degree</h1>
       <div className='projectList'>
         {MasterProjectList.map((project) => {
-          return <ProjectItem id={project.key} name={project.name} image={project.image} />
+          return <ProjectItem id={project._key} name={project.name} image={project.image} />
+          })}
+      </div>
+      <h1>Projects During Bachelor's Degree</h1>
+      <div className='projectList'>
+        {BachelorProjectList.map((project) => {
+          return <ProjectItem id={project._key} name={project.name} image={project.image} />
           })}
       </div>
     </div>
