@@ -69,7 +69,7 @@ function Home() {
         <div className='list'>
           <div className='item'>
             <h2 ref={el => refs.current[3] = el} className='fade-in'> Front-End </h2>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
+            <div ref={el => refs.current[4] = el} className='fade-in' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
               <BasicCard
                 title='Professional Experience'
                 subtitle='Front-End'
@@ -81,8 +81,8 @@ function Home() {
                 textSecondary='HTML, CSS, React Native, React, Vue.js'
               />
             </div>
-            <h2 ref={el => refs.current[4] = el} className='fade-in'> Back-End </h2>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
+            <h2 ref={el => refs.current[5] = el} className='fade-in'> Back-End </h2>
+            <div ref={el => refs.current[6] = el} className='fade-in' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
               <BasicCard
                 title='Professional Experience'
                 subtitle='Back-End'
@@ -96,8 +96,8 @@ function Home() {
             </div>
           </div>
           <div className='languages'>
-            <h2 ref={el => refs.current[5] = el} className='fade-in'> Tecnologies and Tools </h2>
-            <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: '1fr 1fr 1fr', placeItems: 'center' }}>
+            <h2 ref={el => refs.current[7] = el} className='fade-in'> Tecnologies and Tools </h2>
+            <div ref={el => refs.current[8] = el} className='fade-in' style={{ display: 'grid', gap: '32px', gridTemplateColumns: '1fr 1fr 1fr', placeItems: 'center' }}>
               <SmallCard
                 url={ImageReact}
                 framework='React'

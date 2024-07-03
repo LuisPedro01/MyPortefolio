@@ -1,6 +1,6 @@
 .project {
-    width: 100%;
-    height: calc(100vh - 100px);
+    /* width: 100%;
+    height: calc(100vh - 100px); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,8 @@
     font-size: 35px;
   }
   .project img {
-    width: 700px;
+    width: 50%;
+    height: 50%;
     border-radius: 10px;
   }
   
