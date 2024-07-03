@@ -45,17 +45,20 @@ function ProjectDisplay() {
     <div className="project">
       <h1>{project.name}</h1>
       <div className="slider-container">
-        {project.images ? 
+        {project.images ? (
           <Slider {...settings}>
-            {project.images && project.images.map((image, index) => (
+            {project.images.map((image, index) => (
               <div key={index}>
                 <img src={image} alt={`Project Image ${index + 1}`} />
               </div>
             ))}
           </Slider>
-          :
-              <img src={project.image}/>
-        }
+        ) : (
+          <>
+          {console.log(project.image)}
+          <img src={project.image} alt="Project" style={(project.image === '/static/media/image4.352413ff02fadfcb235c.png' || project.image === '/static/media/image7.9f1c05d7c2eda0e5008c.png') ? { height: '650px', width: '400px' } : {}} />
+          </>
+        )}
       </div>
       <div className="project-description">
         <span><b>Skills:</b> {project.skills}</span>
