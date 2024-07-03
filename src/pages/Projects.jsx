@@ -3,7 +3,7 @@ import ProjectItem from '../components/ProjectItem'
 import {ProjectList} from "../helpers/ProjectList";
 import { MasterProjectList } from '../helpers/MasterProjects';
 
-import "../assets/Projects.css"
+import "../css/Projects.css"
 import { BachelorProjectList } from '../helpers/BachelorProjects';
 
 function Projects() {

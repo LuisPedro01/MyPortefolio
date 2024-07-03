@@ -5,7 +5,7 @@ import { MasterProjectList } from "../helpers/MasterProjects"
 import { BachelorProjectList } from "../helpers/BachelorProjects"
 import { GitHub } from '@mui/icons-material';
 // import GitHubIcon from "@material-ui/icons/GitHub";
-import "../assets/ProjectDisplay.css";
+import "../css/ProjectDisplay.css";
 
 const projectMap = ProjectList.reduce((map, project) => {
   map[project._key] = project;

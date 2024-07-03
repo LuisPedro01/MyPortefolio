@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import "../assets/AboutMe.css";
+import "../css/AboutMe.css";
 
 function AboutMe() {
   const refs = useRef([]);

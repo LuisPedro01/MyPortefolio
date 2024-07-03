@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from "react-router-dom"; 
-import "../assets/NavBar.css";
+import "../css/NavBar.css";
 import { Reorder } from '@mui/icons-material';
 import Logo from "../assets/Logo6.png";
 import Logo2 from "../assets/logo3.png";

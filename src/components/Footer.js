@@ -5,7 +5,7 @@ import { GitHub } from '@mui/icons-material';
 // import GithHubIcon from "@material-ui/icons/GitHub";
 import { Mail } from '@mui/icons-material';
 // import MailIcon from "@material-ui/icons/Mail";
-import "../assets/Footer.css";
+import "../css/Footer.css";
 
 function Footer() {
   return (

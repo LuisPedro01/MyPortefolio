@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { LinkedIn } from '@mui/icons-material';
 import { GitHub } from '@mui/icons-material';
 import { Mail } from '@mui/icons-material';
-import "../assets/Home.css";
+import "../css/Home.css";
 import BasicCard from '../components/BasicCard';
 import SmallCard from '../components/SmallCard';
 import ImageReact from '../assets/react.png';

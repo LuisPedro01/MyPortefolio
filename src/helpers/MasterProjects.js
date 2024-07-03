@@ -1,6 +1,11 @@
-import Img1 from "../assets/3.png";
-import Img2 from "../assets/suceesfull.png";
-import Img3 from "../assets/1.png"
+import Img1 from "../assets/image.png";
+import Img2 from "../assets/image2.png";
+import Img3 from "../assets/image3.png"
+import Img4 from '../assets/image4.png'
+import Img5 from '../assets/image5.png'
+import Img6 from '../assets/image6.png'
+import Img7 from '../assets/image7.png'
+import Img8 from '../assets/image8.png'
 
 export const MasterProjectList = [
     {
@@ -15,7 +20,7 @@ export const MasterProjectList = [
     {
       _key: "D3",
       name: "D3",
-      image: '',
+      image: Img2,
       skills: "React, D3, RestfulAPI",
       description: "Project that displays several dashboards from launchs of SpaceX.",
       github: "https://github.com/LuisPedro01/Weather",
@@ -24,7 +29,7 @@ export const MasterProjectList = [
     {
       _key: "SpaceJump",
       name: "Space Jump",
-      image: '',
+      image: Img3,
       skills: "Javascript, P5.js",
       description: "A game that simulates the original Space Jump Game",
       github: "https://github.com/LuisPedro01/To-Do-List",
@@ -33,7 +38,7 @@ export const MasterProjectList = [
     {
       _key: "ChatbotMobile",
       name: "Chatbot Mobile",
-      image: '',
+      image: Img4,
       skills: "React-Native, Firebase, NPM",
       description: "A Chatbot for React Native apps, with the possibility to integrate the Chatbot just installing the NPM package of the project.",
       github: "https://github.com/LuisPedro01/To-Do-List",
@@ -42,16 +47,16 @@ export const MasterProjectList = [
     {
       _key: "AFrame",
       name: "A-Frame",
-      image: '',
+      image: Img5,
       skills: "Javascript, A-Frame",
-      description: "A game that simulates the origianl Space Jump Game",
+      description: "A game that simulates a Virtual Stadium",
       github: "https://github.com/LuisPedro01/To-Do-List",
       link: "https://myytodolistt.netlify.app"
     },
     {
       _key: "ChabotVue",
       name: "Chatbot",
-      image: '',
+      image: Img6,
       skills: "Vue.js, Firebase",
       description: "A game that simulates the origianl Space Jump Game",
       github: "https://github.com/LuisPedro01/To-Do-List",
@@ -60,7 +65,7 @@ export const MasterProjectList = [
     {
       _key: "CompassFlow",
       name: "Compass Flow",
-      image: '',
+      image: Img7,
       skills: "React-Native, Tensorflow",
       description: "A game that simulates the origianl Space Jump Game",
       github: "https://github.com/LuisPedro01/To-Do-List",
@@ -69,7 +74,7 @@ export const MasterProjectList = [
     {
       _key: "Arduino",
       name: "Arduino Game Project",
-      image: '',
+      image: Img8,
       skills: "C, Arduino",
       description: "A game that simulates the origianl Space Jump Game",
       github: "https://github.com/LuisPedro01/To-Do-List",

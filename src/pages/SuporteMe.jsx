@@ -1,7 +1,7 @@
 import React from "react";
 import { MonetizationOn } from "@mui/icons-material";
 // import MonetizationOnTwoToneIcon from "@material-ui/icons/MonetizationOnTwoTone";
-import "../assets/SuportMe.css";
+import "../css/SuportMe.css";
 
 function SuportMe() {
   return (
