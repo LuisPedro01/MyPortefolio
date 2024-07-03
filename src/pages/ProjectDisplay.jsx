@@ -1,11 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { ProjectList } from "../helpers/ProjectList";
-import { MasterProjectList } from "../helpers/MasterProjects"
-import { BachelorProjectList } from "../helpers/BachelorProjects"
+import { MasterProjectList } from "../helpers/MasterProjects";
+import { BachelorProjectList } from "../helpers/BachelorProjects";
+import Slider from "react-slick";
 import { GitHub } from '@mui/icons-material';
-// import GitHubIcon from "@material-ui/icons/GitHub";
 import "../css/ProjectDisplay.css";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const projectMap = ProjectList.reduce((map, project) => {
   map[project._key] = project;
@@ -30,21 +32,37 @@ function ProjectDisplay() {
     return <div>Project not found</div>;
   }
 
+  const settings = {
+    dots: true,
+    lazyLoad: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <div className="project">
-      <h1> {project.name}</h1>
-      <img src={project.image} />
-      <p>
-        <b>Skills:</b> {project.skills}
-      </p>
-      <p>
-        <b>Description: </b> {project.description}
-      </p>
-      <p>
-        <a href={project.link} target='_blank'><b>Link to website </b></a> 
-      </p>
-      <a href={project.github} target='_blank'><GitHub /></a>
-      
+      <h1>{project.name}</h1>
+      <div className="slider-container">
+        {project.images ? 
+          <Slider {...settings}>
+            {project.images && project.images.map((image, index) => (
+              <div key={index}>
+                <img src={image} alt={`Project Image ${index + 1}`} />
+              </div>
+            ))}
+          </Slider>
+          :
+              <img src={project.image}/>
+        }
+      </div>
+      <div className="project-description">
+        <span><b>Skills:</b> {project.skills}</span>
+        <span><b>Description:</b> {project.description}</span>
+        <span><a href={project.link} target='_blank' rel="noopener noreferrer"><b>Link to website</b></a></span>
+      </div>
+      <a href={project.github} target='_blank' rel="noopener noreferrer"><GitHub /></a>
     </div>
   );
 }

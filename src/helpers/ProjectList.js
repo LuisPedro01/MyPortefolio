@@ -1,12 +1,22 @@
 import Img1 from "../assets/3.png";
 import Img2 from "../assets/suceesfull.png";
+import Img10 from "../assets/image1.1.png";
+import Img12 from "../assets/image1.2.png";
+import Img13 from "../assets/image1.3.png";
+
 import Img3 from "../assets/1.png"
 
 export const ProjectList = [
     {
-      _key: 'SucessfullasUsual',
-      name: "Sucessfull as Usual",
+      _key: 'SucessfulasUsual',
+      name: "Sucessful as Usual",
       image: Img2,
+      images: [
+        Img2,
+        Img10,
+        Img12,
+        Img13
+      ],
       skills: "HTML, CSS",
       description: "Website for a state agency",
       github: "https://github.com/LuisPedro01/Projeto",
