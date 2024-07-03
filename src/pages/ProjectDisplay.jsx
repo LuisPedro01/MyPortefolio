@@ -5,9 +5,19 @@ import { GitHub } from '@mui/icons-material';
 // import GitHubIcon from "@material-ui/icons/GitHub";
 import "../assets/ProjectDisplay.css";
 
+const projectMap = ProjectList.reduce((map, project) => {
+  map[project._key] = project;
+  return map;
+}, {});
+
 function ProjectDisplay() {
-  const { id } = useParams();
-  const project = ProjectList[id];
+  const { key } = useParams();
+  const project = projectMap[key];
+
+  if (!project) {
+    return <div>Project not found</div>;
+  }
+
   return (
     <div className="project">
       <h1> {project.name}</h1>

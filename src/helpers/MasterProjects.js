@@ -4,24 +4,27 @@ import Img3 from "../assets/1.png"
 
 export const MasterProjectList = [
     {
+      _key: "GeographicInformation",
       name: "Geographic Information",
-      image: Img2,
+      image: '',
       skills: "React, Leaflet",
       description: "Website with the posibility to create categories and visualize them in a Map",
       github: "https://github.com/LuisPedro01/Projeto",
       link: "https://main--sucessfullasusual.netlify.app/index.html"
     },
     {
+      _key: "WeatherApp",
       name: "Weather App",
-      image: Img3,
+      image: '',
       skills: "React",
       description: "Weather site",
       github: "https://github.com/LuisPedro01/Weather",
       link: "https://myweather12.netlify.app/"
     },
     {
+      _key: "ToDoList",
       name: "To Do List",
-      image: Img1,
+      image: '',
       skills: "React",
       description: "To Do List",
       github: "https://github.com/LuisPedro01/To-Do-List",

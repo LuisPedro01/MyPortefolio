@@ -4,6 +4,7 @@ import Img3 from "../assets/1.png"
 
 export const ProjectList = [
     {
+      _key: 'SucessfullasUsual',
       name: "Sucessfull as Usual",
       image: Img2,
       skills: "HTML, CSS",
@@ -12,6 +13,7 @@ export const ProjectList = [
       link: "https://main--sucessfullasusual.netlify.app/index.html"
     },
     {
+      _key: "WeatherApp",
       name: "Weather App",
       image: Img3,
       skills: "React",
@@ -20,6 +22,7 @@ export const ProjectList = [
       link: "https://myweather12.netlify.app/"
     },
     {
+      _key: "ToDoList",
       name: "To Do List",
       image: Img1,
       skills: "React",

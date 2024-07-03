@@ -10,14 +10,14 @@ function Projects() {
     <div className='projects'>
       <h1>Personal Projects</h1>
       <div className='projectList'>
-        {ProjectList.map((project, idx) => {
-          return <ProjectItem id={idx} name={project.name} image={project.image} />
+        {ProjectList.map((project) => {
+          return <ProjectItem id={project._key} name={project.name} image={project.image} />
           })}
       </div>   
       <h1>Projects During Master's Degree</h1>
       <div className='projectList'>
-        {MasterProjectList.map((project, idx) => {
-          return <ProjectItem id={idx} name={project.name} image={project.image} />
+        {MasterProjectList.map((project) => {
+          return <ProjectItem id={project.key} name={project.name} image={project.image} />
           })}
       </div>
     </div>
