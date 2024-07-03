@@ -6,7 +6,7 @@ export const MasterProjectList = [
     {
       _key: "GeographicInformation",
       name: "Geographic Information",
-      image: '',
+      image: Img1,
       skills: "React, Leaflet",
       description: "Website with the posibility to create categories and visualize them in a Map",
       github: "https://github.com/LuisPedro01/Projeto",
