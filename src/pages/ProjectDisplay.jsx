@@ -63,7 +63,10 @@ function ProjectDisplay() {
       <div className="project-description">
         <span><b>Skills:</b> {project.skills}</span>
         <span><b>Description:</b> {project.description}</span>
-        <span><a href={project.link} target='_blank' rel="noopener noreferrer"><b>Link to website</b></a></span>
+        {project.link ? 
+          <span><a href={project.link} target='_blank' rel="noopener noreferrer"><b>Link to website</b></a></span>
+          : null
+        }
       </div>
       <a href={project.github} target='_blank' rel="noopener noreferrer"><GitHub /></a>
     </div>
