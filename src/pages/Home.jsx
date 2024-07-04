@@ -91,7 +91,7 @@ function Home() {
               <BasicCard
                 title='Acamical Experience'
                 subtitle='Back-End'
-                textSecondary='SQL'
+                textSecondary='SQL, Node.js, '
               />
             </div>
           </div>
