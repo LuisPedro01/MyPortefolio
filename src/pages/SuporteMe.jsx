@@ -1,19 +1,53 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MonetizationOn } from "@mui/icons-material";
-// import MonetizationOnTwoToneIcon from "@material-ui/icons/MonetizationOnTwoTone";
 import "../css/SuportMe.css";
-import { POST } from "../api/email/route.ts";
 
 function SuportMe() {
   const refs = useRef([]);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleSendEmail = async () => {
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSendEmail = async (e) => {
+    e.preventDefault();
     try {
-      await POST();
-      console.log('Email enviado com sucesso!');
-      // Adicione qualquer lógica adicional após enviar o email, se necessário
+
+      fetch('http://localhost:5000/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: 'João', email: 'joao@email.com', message: 'Teste' }),
+      })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.error(err));
+      
+      
+      // const res = await fetch("/api/email/route", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(formData),
+      // });
+  
+      // if (res.ok) {
+      //   console.log("Email enviado com sucesso!");
+      //   alert("Mensagem enviada com sucesso!");
+      //   setFormData({ name: "", email: "", message: "" });
+      // } else {
+      //   console.error("Erro ao enviar email:", await res.json());
+      //   alert("Erro ao enviar a mensagem. Tenta novamente.");
+      // }
     } catch (error) {
-      console.error('Erro ao enviar email:', error);
+      console.error("Erro na requisição:", error);
+      alert("Erro inesperado.");
     }
   };
 
@@ -23,21 +57,21 @@ function SuportMe() {
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.add("visible");
         }
       });
     }, options);
 
-    refs.current.forEach(ref => {
+    refs.current.forEach((ref) => {
       if (ref) {
         observer.observe(ref);
       }
     });
 
     return () => {
-      refs.current.forEach(ref => {
+      refs.current.forEach((ref) => {
         if (ref) {
           observer.unobserve(ref);
         }
@@ -47,20 +81,33 @@ function SuportMe() {
 
   return (
     <div className="suport1">
-      <h1 ref={el => refs.current[0] = el} className='fade-in'>If you want to collaborate with me and give some support donate some!</h1>
-      <p ref={el => refs.current[1] = el} className='fade-in'>Donate to Ko-Fi</p>
-      <a href="https://ko-fi.com/luisrodrigues66052" target="_blank" ref={el => refs.current[2] = el} className='fade-in'>
-        <MonetizationOn />
-      </a>
+      <h1>Contact Me!</h1>
 
-      <h1>Contact Me!</h1> 
-
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type='submit' onClick={handleSendEmail}>Send!</button>
-
+      <form onSubmit={handleSendEmail}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+          value={formData.message}
+          onChange={handleChange}
+        ></textarea>
+        <button type="submit">Send!</button>
       </form>
     </div>
   );
