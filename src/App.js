@@ -20,7 +20,7 @@ export default function App() {
           <Route path="/projects" element={<Projects />}/>
           <Route path="/project/:key" element={<ProjectDisplay/>} />
           <Route path="/experience" element={<Experience />}/>
-          <Route path="/support" element={<SuportMe />}/>
+          {/* <Route path="/support" element={<SuportMe />}/> */}
         </Routes>
         <Footer />
       </Router>
