@@ -63,7 +63,7 @@ function Experince() {
 
         <VerticalTimelineElement
           className="vertical-timeline-elemental--education"
-          date="September 2023-today"
+          date="September 2023 - December 2024"
           iconStyle={{ background: "#3e497a", color: "#fff" }}
           icon={<Work />}
         >
@@ -73,7 +73,23 @@ function Experince() {
             src={require("../assets/logoVISORAI.webp")}
             alt="VISOR"
             height={250}
-            width={400}
+            width={300}
+          />
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+          className="vertical-timeline-elemental--education"
+          date="January 2025 - today"
+          iconStyle={{ background: "#3e497a", color: "#fff" }}
+          icon={<Work />}
+        >
+          <h3 className="vertical-timeline-element-title">Visor-AI</h3>
+          <p>Analyst I - Software Developer</p>
+          <img
+            src={require("../assets/logoVISORAI.webp")}
+            alt="VISOR"
+            height={250}
+            width={300}
           />
         </VerticalTimelineElement>
       </VerticalTimeline>
