@@ -68,36 +68,38 @@ function Home() {
         <h1 ref={el => refs.current[2] = el} className='fade-in'>Skills</h1>
         <div className='list'>
           <div className='item'>
-            <h2 ref={el => refs.current[3] = el} className='fade-in'> Front-End </h2>
-            <div ref={el => refs.current[4] = el} className='fade-in' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
-              <BasicCard
-                title='Professional Experience'
-                subtitle='Front-End'
-                textSecondary='HTML, CSS, React'
-              />
-              <BasicCard
-                title='Acamical Experience'
-                subtitle='Front-End'
-                textSecondary='HTML, CSS, React Native, React, Vue.js'
-              />
-            </div>
-            <h2 ref={el => refs.current[5] = el} className='fade-in'> Back-End </h2>
-            <div ref={el => refs.current[6] = el} className='fade-in' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: '16px' }}>
-              <BasicCard
-                title='Professional Experience'
-                subtitle='Back-End'
-                textSecondary='Node.js, Typescript, MongoDB'
-              />
-              <BasicCard
-                title='Acamical Experience'
-                subtitle='Back-End'
-                textSecondary='SQL, Node.js, '
-              />
-            </div>
+          <h2 ref={el => refs.current[3] = el} className='fade-in'> Front-End </h2>
+<div ref={el => refs.current[4] = el} className='fade-in cards-grid'>
+  <BasicCard
+    title='Professional Experience'
+    subtitle='Front-End'
+    textSecondary='HTML, CSS, React'
+  />
+  <BasicCard
+    title='Acamical Experience'
+    subtitle='Front-End'
+    textSecondary='HTML, CSS, React Native, React, Vue.js'
+  />
+</div>
+
+<h2 ref={el => refs.current[5] = el} className='fade-in'> Back-End </h2>
+<div ref={el => refs.current[6] = el} className='fade-in cards-grid'>
+  <BasicCard
+    title='Professional Experience'
+    subtitle='Back-End'
+    textSecondary='Node.js, Typescript, MongoDB'
+  />
+  <BasicCard
+    title='Acamical Experience'
+    subtitle='Back-End'
+    textSecondary='SQL, Node.js'
+  />
+</div>
+
           </div>
           <div className='languages'>
-            <h2 ref={el => refs.current[7] = el} className='fade-in'> Tecnologies and Tools </h2>
-            <div ref={el => refs.current[8] = el} className='fade-in' style={{ display: 'grid', gap: '32px', gridTemplateColumns: '1fr 1fr 1fr', placeItems: 'center' }}>
+            <h2 ref={el => refs.current[7] = el} className='fade-in'> Technologies and Tools </h2>
+            <div ref={el => refs.current[8] = el} className='fade-in technologies-grid'>
               <SmallCard
                 url={ImageReact}
                 framework='React'
