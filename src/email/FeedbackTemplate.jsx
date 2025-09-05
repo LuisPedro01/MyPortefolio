@@ -11,13 +11,13 @@ import {
     Text,
   } from "@react-email/components";
   import * as React from "react";
-  import Logo from "../assets/Logo6.png";
+//   import Logo from "../assets/Logo6.png";
   
   const baseUrl = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
     : "";
   
-  const ThankYouEmail = ({ userName, supportLink }) => {
+  const ThankYouEmail = ({ userName }) => {
     const previewText = `Thank you for contacting us, ${userName}!`;
   
     return (
@@ -29,8 +29,8 @@ import {
           <Container style={container}>
             <Section>
               <Img
-                src={Logo}
-                width="96"
+                src={`https://myportefolio1.netlify.app/static/media/Logo6.dd73d0c83a40b6a3b5b5.png`}
+                width="150"
                 height="30"
                 alt="Company Logo"
               />
@@ -41,9 +41,9 @@ import {
                 We have received your message and our team will get back to you as soon as possible. 
               </Text>
               <Text style={paragraph}>
-                In the meantime, you can check our <Link href={supportLink} style={link}>Support Center</Link> for answers to common questions.
+                In the meantime, you can check our <Link  style={link}>Support Center</Link> for answers to common questions.
               </Text>
-              <Button style={button} href={supportLink}>
+              <Button style={button} >
                 Visit Support Center
               </Button>
             </Section>
