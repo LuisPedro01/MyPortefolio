@@ -39,5 +39,14 @@ export const ProjectList = [
       description: "To Do List",
       github: "https://github.com/LuisPedro01/To-Do-List",
       link: "https://myytodolistt.netlify.app"
-    }    
+    },
+    {
+      _key: "FinanceBot",
+      name: "Finance Telegram Bot",
+      image: Img1,
+      skills: "Python",
+      description: "A telegram bot that can store all the information about finance in Notion Database. It also sends a weekly message to the user with the total expenses of the week.",
+      github: "https://github.com/LuisPedro01/To-Do-List",
+      link: "https://myytodolistt.netlify.app"
+    } 
   ];
