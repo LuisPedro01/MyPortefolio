@@ -1,82 +1,229 @@
-.about1 {
-  width: 100%;
-  height: calc(100vh - 100px);
+.aboutme {
+  padding-top: 2.25rem;
+  padding-bottom: var(--section-space);
+}
+
+.about-hero {
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+  margin-bottom: 1.2rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.9) 100%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-hero span,
+.contact-label {
+  display: inline-flex;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: var(--secondary-soft);
+  color: var(--secondary-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about-hero h1 {
+  max-width: 12ch;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 0.92;
+  margin: 1rem 0;
+}
+
+.about-hero p {
+  max-width: 760px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 1rem;
+}
+
+.about-story,
+.contact-card,
+.availability-card,
+.email-form {
+  border-radius: var(--radius-lg);
+}
+
+.about-story {
+  padding: 1.7rem;
+}
+
+.about-story h2,
+.contact-card h3 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+
+.about-story p,
+.contact-card p,
+.availability-card p {
+  line-height: 1.8;
+}
+
+.about-story p + p {
+  margin-top: 1rem;
+}
+
+.about-highlights {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.about-highlights div {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  background-color: #094088;
-  color: #f0f0f0;
-  background-image: url(../assets/q.png);
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--border);
 }
 
-.about1 h1 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 70px;
-  color: #ffffff;
-  height: 50px;
+.about-sidebar {
+  display: grid;
+  gap: 1rem;
 }
 
-
-.about1 p {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  color: #ffffff;
-  height: 40px;
+.contact-card,
+.availability-card {
+  padding: 1.5rem;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+.copy-btn,
+.submit-btn-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+.copy-btn {
+  margin-top: 1.2rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: var(--surface-dark);
+  color: white;
+  font-weight: 700;
+}
+
+.copy-btn:hover,
+.submit-btn-email:hover {
+  transform: translateY(-2px);
+}
+
+.email-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.availability-card span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.contact-section {
+  margin-top: var(--section-space);
 }
 
 .email-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
-  width: 350px;
+  padding: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .input-field,
 .textarea-field {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.textarea-field {
+  min-height: 180px;
+  margin-top: 1rem;
+  resize: vertical;
 }
 
 .input-field:focus,
 .textarea-field:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
   outline: none;
-}
-
-.textarea-field {
-  resize: none;
-  min-height: 120px;
+  border-color: rgba(231, 111, 81, 0.5);
+  box-shadow: 0 0 0 4px rgba(231, 111, 81, 0.1);
 }
 
 .submit-btn-email {
-  background: #002ebb;
-  color: white;;
-  padding: 12px;
-  border: none;;
-  border-radius: 8px;;
-  cursor: pointer;;
-  font-weight: bold;;
-  transition: background 0.3s ease;;
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 18px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
 }
 
-.submit-btn-email:hover {
-  background: #0056b3;;
+.submit-btn-email:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.status-msg {
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  font-weight: 700;
+}
+
+.status-msg.success {
+  background: rgba(45, 106, 79, 0.12);
+  color: var(--success);
+}
+
+.status-msg.error {
+  background: rgba(207, 95, 67, 0.12);
+  color: var(--accent-strong);
+}
+
+@media (max-width: 980px) {
+  .about-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-hero,
+  .about-story,
+  .contact-card,
+  .availability-card,
+  .email-form {
+    border-radius: 28px;
+  }
+
+  .about-hero h1 {
+    max-width: 100%;
+  }
 }

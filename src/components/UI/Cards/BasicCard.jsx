@@ -1,32 +1,46 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function BasicCard({title, subtitle, textSecondary, text, extraButton}) {
+export default function BasicCard({ title, subtitle, textSecondary, text, extraButton }) {
   return (
-    <Card sx={{ width: 250, height: 200 }}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="#094088" gutterBottom>
+    <Card
+      sx={{
+        width: '100%',
+        minHeight: 220,
+        borderRadius: '28px',
+        border: '1px solid var(--border)',
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.82) 100%)',
+        boxShadow: 'var(--shadow-sm)',
+        transition: 'var(--transition)',
+        '&:hover': {
+          boxShadow: 'var(--shadow-md)',
+          transform: 'translateY(-6px)',
+        },
+      }}
+    >
+      <CardContent sx={{ padding: '1.5rem !important' }}>
+        <Typography sx={{ fontSize: 13, fontWeight: 700, color: 'var(--accent-strong)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
           {title}
         </Typography>
-        <Typography variant="h5" component="div">
-            {subtitle}
+        <Typography component="div" sx={{ color: 'var(--text-main)', fontWeight: 700, fontSize: '1.45rem', mt: 1 }}>
+          {subtitle}
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {textSecondary}
+        <Typography sx={{ mb: 1.25, mt: 1, color: 'var(--text-soft)', fontWeight: 500 }}>
+          {textSecondary}
         </Typography>
-        <Typography variant="body2">
+        {text ? (
+          <Typography variant="body2" sx={{ color: 'var(--text-soft)', lineHeight: 1.7 }}>
             {text}
-        </Typography>
+          </Typography>
+        ) : null}
+        {extraButton ? (
+          <Typography sx={{ mt: 2, color: 'var(--secondary-accent)', fontWeight: 700 }}>
+            {extraButton}
+          </Typography>
+        ) : null}
       </CardContent>
-      {extraButton && (
-        <CardActions>
-          <Button size="small">{extraButton}</Button>
-        </CardActions>
-      )}
     </Card>
   );
 }

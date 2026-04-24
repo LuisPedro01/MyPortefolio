@@ -1,44 +1,64 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from "react-router-dom"; 
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
-import { Reorder } from '@mui/icons-material';
-import Logo from "@assets/Logo6.png";
-import Logo2 from "@assets/logo3.png";
+import { Close, Reorder } from '@mui/icons-material';
+
+const navItems = [
+  { to: "/", label: "Home" },
+  { to: "/aboutme", label: "About" },
+  { to: "/experience", label: "Experience" },
+  { to: "/projects", label: "Projects" },
+];
 
 function NavBar() {
-    const [expandNavBar, setExpandNavBar] = useState(false);
-    const location = useLocation();
+  const [expandNavBar, setExpandNavBar] = useState(false);
+  const location = useLocation();
 
-    useEffect(() => {
-        setExpandNavBar(false);
-    }, [location]);
+  useEffect(() => {
+    setExpandNavBar(false);
+  }, [location]);
 
-    const isActive = (path) => {
-        return location.pathname === path ? 'active' : '';
-    };
+  const isActive = (path) => (location.pathname === path ? 'active' : '');
 
-    return (
-        <div className='navbar' id={expandNavBar ? "open" : "close"}>
-            <div className='toggleButton'> 
-                <div className='logo'>
-                    <img src={Logo2} className="img" alt="Logo" />
-                </div>            
-                <button onClick={() => {setExpandNavBar((prev) => !prev)}}>
-                    <Reorder/> 
-                </button>
-            </div>
-            <div className='links'>
-                <div className='name'> 
-                    <Link to="/"><span className='hide'><img src={Logo} className="img" alt="Logo" /></span></Link>
-                </div>
-                <Link to="/" className={isActive("/")}> Home </Link>
-                <Link to="/aboutme" className={isActive("/aboutme")}> About </Link>
-                <Link to="/experience" className={isActive("/experience")}> Carreer </Link>
-                <Link to="/projects" className={isActive("/projects")}> Projects </Link>
-                {/* <Link to="/support" className={isActive("/support")}> Support </Link> */}
-            </div>
+  return (
+    <header className="navbar-shell">
+      <nav className={`navbar ${expandNavBar ? "is-open" : ""}`}>
+        <Link to="/" className="brand" aria-label="Luís Rodrigues home">
+          <span className="brand-mark">LR</span>
+          <span className="brand-copy">
+            <strong>Luís Rodrigues</strong>
+            <small>Developer Portfolio</small>
+          </span>
+        </Link>
+
+        <button
+          className="menu-toggle"
+          aria-label={expandNavBar ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={expandNavBar}
+          onClick={() => setExpandNavBar((prev) => !prev)}
+          type="button"
+        >
+          {expandNavBar ? <Close /> : <Reorder />}
+        </button>
+
+        <div className="nav-links">
+          {navItems.map(({ to, label }) => (
+            <Link key={to} to={to} className={isActive(to)}>
+              {label}
+            </Link>
+          ))}
+          <a
+            className="nav-cta"
+            href="mailto:luisprodrigues01@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Let&apos;s talk
+          </a>
         </div>
-    );
+      </nav>
+    </header>
+  );
 }
 
 export default NavBar;

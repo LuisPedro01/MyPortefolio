@@ -5,22 +5,52 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-export default function SmallCard({url, framework}) {
+export default function SmallCard({ url, framework }) {
   return (
-      <Card sx={{ width: 220, height: 80, display: 'flex', justifyContent: 'space-between', boxShadow: '5px 5px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)' }}>
-          <CardActionArea style={{ display: 'flex', flexDirection: 'row' }}>
-              <CardContent>
-                  <Typography>
-                      {framework}
-                  </Typography>
-              </CardContent>
-              <CardMedia
-                  style={{ width: '4rem', maxWidth: '100%' }}
-                  component="img"
-                  image={url}
-                  alt="img"
-              />
-          </CardActionArea>
-      </Card>
+    <Card
+      sx={{
+        width: '100%',
+        minHeight: 94,
+        borderRadius: '22px',
+        border: '1px solid var(--border)',
+        background: 'rgba(255,255,255,0.68)',
+        boxShadow: 'var(--shadow-sm)',
+        overflow: 'hidden',
+        transition: 'var(--transition)',
+        '&:hover': {
+          boxShadow: 'var(--shadow-md)',
+          transform: 'translateY(-4px)',
+          borderColor: 'var(--border-strong)',
+        },
+      }}
+    >
+      <CardActionArea
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: '1rem 1.1rem',
+          height: '100%',
+        }}
+      >
+        <CardContent sx={{ padding: '0 !important', flex: 1 }}>
+          <Typography sx={{ fontWeight: 700, color: 'var(--text-main)', textAlign: 'left' }}>
+            {framework}
+          </Typography>
+        </CardContent>
+        <CardMedia
+          component="img"
+          image={url}
+          alt={framework}
+          sx={{
+            width: '2.9rem',
+            height: '2.9rem',
+            objectFit: 'contain',
+            marginLeft: '1rem',
+            filter: 'saturate(0.95)',
+          }}
+        />
+      </CardActionArea>
+    </Card>
   );
 }
