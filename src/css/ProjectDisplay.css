@@ -1,65 +1,201 @@
 .project {
-    /* width: 100%;
-    height: calc(100vh - 100px); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* margin-top: 0%; */
-  }
-  
-  .project h1 {
-    margin-top: 50px;
-    color: #3e497a;
-    font-size: 35px;
+  padding-top: 2rem;
+  padding-bottom: var(--section-space);
+}
+
+.project-topbar {
+  margin-bottom: 1rem;
+}
+
+.back-link,
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.back-link {
+  color: var(--text-soft);
+}
+
+.project-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 1.2rem;
+}
+
+.project-heading span,
+.project-meta span {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.project-heading h1 {
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: 0.92;
+  margin: 0.8rem 0;
+}
+
+.project-heading p {
+  max-width: 720px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.project-link {
+  padding: 0.95rem 1.1rem;
+  border-radius: 999px;
+  transition: var(--transition);
+}
+
+.project-link.primary {
+  background: var(--surface-dark);
+  color: white;
+}
+
+.project-link.secondary {
+  background: rgba(17, 17, 17, 0.06);
+  color: var(--text-main);
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: 1rem;
+}
+
+.slider-container,
+.project-description,
+.related-card,
+.project-empty {
+  border-radius: var(--radius-lg);
+}
+
+.slider-container {
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.slider-container img {
+  width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+.project-sidebar {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-description {
+  padding: 1.4rem;
+}
+
+.project-description h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.project-meta {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-meta p {
+  margin-top: 0.35rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.project-points {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.project-points li {
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.related-projects {
+  margin-top: var(--section-space);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.related-card {
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.related-card-image {
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+}
+
+.related-card-copy {
+  padding: 1.2rem;
+}
+
+.related-card-copy h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.project-empty {
+  padding: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .project-hero,
+  .project-grid,
+  .related-grid {
+    grid-template-columns: 1fr;
+    display: grid;
   }
 
-  .project .slider-container {
-    width: 80%;
-    margin: auto;
+  .project-hero {
+    align-items: flex-start;
   }
-  
-  .project .slick-slide img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .project img {
-    width: 80%;  /* Ajustar para 100% do contêiner */
-    height: auto;  /* Ajustar automaticamente a altura */
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 9px 34px 1px rgba(120,120,120,1);
-    -moz-box-shadow: 0px 9px 34px 1px rgba(120,120,120,1);
-    box-shadow: 0px 9px 34px 1px rgba(120,120,120,1);
-  }
-  
+}
 
-  .project span {
-    color: #3e497a;
-    font-size: 18px;
-    /*margin-top: 0px; */
+@media (max-width: 760px) {
+  .slider-container,
+  .project-description,
+  .related-card,
+  .project-empty {
+    border-radius: 28px;
   }
 
-  .project-description{
-    display: flex;
-    flex-direction: column;
-    margin-top: 32px;
-    gap: 16px;
-    margin-bottom: 32px;
+  .slider-container {
+    padding: 0.75rem;
   }
-  
-  .project svg {
-    font-size: 60px;
-    color: #3e497a;
-    margin-bottom: 20%;
-  }
-
-  @media (max-width: 800px){
-    .project{
-      height: 100%;
-    }
-
-    .project p{
-      font-size: 35px;
-    }
-  }
+}

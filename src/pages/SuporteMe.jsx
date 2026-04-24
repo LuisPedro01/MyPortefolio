@@ -1,95 +1,25 @@
-import React, { useEffect, useRef, useState } from "react";
-import { MonetizationOn } from "@mui/icons-material";
-import "../css/SuportMe.css";
+import React from "react";
+import { useIntersectionObserver } from "@hooks/useIntersectionObserver";
+import { useEmailForm } from "@hooks/useEmailForm";
+import "@css/SuportMe.css";
 
 function SuportMe() {
-  const refs = useRef([]);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSendEmail = async (e) => {
-    e.preventDefault();
-    try {
-
-      fetch('http://localhost:5000/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: 'João', email: 'joao@email.com', message: 'Teste' }),
-      })
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .catch(err => console.error(err));
-      
-      
-      // const res = await fetch("/api/email/route", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(formData),
-      // });
-  
-      // if (res.ok) {
-      //   console.log("Email enviado com sucesso!");
-      //   alert("Mensagem enviada com sucesso!");
-      //   setFormData({ name: "", email: "", message: "" });
-      // } else {
-      //   console.error("Erro ao enviar email:", await res.json());
-      //   alert("Erro ao enviar a mensagem. Tenta novamente.");
-      // }
-    } catch (error) {
-      console.error("Erro na requisição:", error);
-      alert("Erro inesperado.");
-    }
-  };
-
-  useEffect(() => {
-    const options = {
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, options);
-
-    refs.current.forEach((ref) => {
-      if (ref) {
-        observer.observe(ref);
-      }
-    });
-
-    return () => {
-      refs.current.forEach((ref) => {
-        if (ref) {
-          observer.unobserve(ref);
-        }
-      });
-    };
-  }, []);
+  const [ref, isVisible] = useIntersectionObserver();
+  const { formData, status, handleChange, handleSubmit } = useEmailForm(
+    'https://backendportefolio-production.up.railway.app/send-email'
+  );
 
   return (
-    <div className="suport1">
+    <div ref={ref} className={`suport1 fade-in ${isVisible ? 'visible' : ''}`}>
       <h1>Contact Me!</h1>
 
-      <form onSubmit={handleSendEmail}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
           placeholder="Your Name"
           required
-          value={formData.name}
+          value={formData.name || ''}
           onChange={handleChange}
         />
         <input
@@ -97,17 +27,22 @@ function SuportMe() {
           name="email"
           placeholder="Your Email"
           required
-          value={formData.email}
+          value={formData.email || ''}
           onChange={handleChange}
         />
         <textarea
           name="message"
           placeholder="Your Message"
           required
-          value={formData.message}
+          value={formData.message || ''}
           onChange={handleChange}
         ></textarea>
-        <button type="submit">Send!</button>
+        <button type="submit" disabled={status === 'loading'}>
+          {status === 'loading' ? 'Sending...' : 'Send!'}
+        </button>
+        
+        {status === 'success' && <p className="status-msg success">Email enviado com sucesso!</p>}
+        {status === 'error' && <p className="status-msg error">Erro ao enviar email. Tente novamente.</p>}
       </form>
     </div>
   );
