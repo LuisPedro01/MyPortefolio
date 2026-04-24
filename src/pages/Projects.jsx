@@ -1,65 +1,38 @@
-import React, { useEffect, useRef } from 'react'
-import ProjectItem from '../components/ProjectItem'
-import { ProjectList } from "../helpers/ProjectList";
-import { MasterProjectList } from '../helpers/MasterProjects';
+import React from 'react';
+import ProjectItem from '@components/UI/Cards/ProjectItem';
+import { projects } from "@data/projects";
+import { useIntersectionObserver } from "@hooks/useIntersectionObserver";
+import "@css/Projects.css";
 
-import "../css/Projects.css"
-import { BachelorProjectList } from '../helpers/BachelorProjects';
-
-function Projects() {
-
-  const refs = useRef([]);
-
-  useEffect(() => {
-    const options = {
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, options);
-
-    refs.current.forEach(ref => {
-      if (ref) {
-        observer.observe(ref);
-      }
-    });
-
-    return () => {
-      refs.current.forEach(ref => {
-        if (ref) {
-          observer.unobserve(ref);
-        }
-      });
-    };
-  }, []);
+const ProjectSection = ({ title, category }) => {
+  const [sectionRef, isVisible] = useIntersectionObserver();
+  const filteredProjects = projects.filter(p => p.category === category);
 
   return (
-    <div className='projects'>
-      <h1 ref={el => refs.current[0] = el} className='fade-in'>Personal Projects</h1>
-      <div ref={el => refs.current[1] = el} className='projectList'>
-        {ProjectList.map((project) => {
-          return <ProjectItem id={project._key} name={project.name} image={project.image} />
-        })}
-      </div>
-      <h1 ref={el => refs.current[2] = el} className='fade-in'>Projects During Master's Degree</h1>
-      <div ref={el => refs.current[3] = el} className='projectList'>
-        {MasterProjectList.map((project) => {
-          return <ProjectItem id={project._key} name={project.name} image={project.image} />
-        })}
-      </div>
-      <h1 ref={el => refs.current[4] = el} className='fade-in'>Projects During Bachelor's Degree</h1>
-      <div ref={el => refs.current[5] = el}className='projectList'>
-        {BachelorProjectList.map((project) => {
-          return <ProjectItem id={project._key} name={project.name} image={project.image} />
-        })}
+    <div ref={sectionRef} className={`section-container ${isVisible ? 'visible' : ''}`}>
+      <h1 className='fade-in'>{title}</h1>
+      <div className='projectList'>
+        {filteredProjects.map((project) => (
+          <ProjectItem 
+            key={project._key} 
+            id={project._key} 
+            name={project.name} 
+            image={project.image} 
+          />
+        ))}
       </div>
     </div>
-  )
+  );
+};
+
+function Projects() {
+  return (
+    <div className='projects'>
+      <ProjectSection title="Personal Projects" category="general" />
+      <ProjectSection title="Projects During Master's Degree" category="master" />
+      <ProjectSection title="Projects During Bachelor's Degree" category="bachelor" />
+    </div>
+  );
 }
 
-export default Projects
+export default Projects;

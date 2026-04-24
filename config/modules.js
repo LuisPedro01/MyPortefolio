@@ -63,11 +63,21 @@ function getWebpackAliases(options = {}) {
 
   const baseUrlResolved = path.resolve(paths.appPath, baseUrl);
 
+  const aliases = {};
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
-    return {
-      src: paths.appSrc,
-    };
+    aliases['src'] = paths.appSrc;
   }
+
+  // Adicionar suporte para a propriedade 'paths' do jsconfig.json
+  if (options.paths) {
+    Object.keys(options.paths).forEach((key) => {
+      const aliasName = key.replace('/*', '');
+      const aliasPath = options.paths[key][0].replace('/*', '');
+      aliases[aliasName] = path.resolve(baseUrlResolved, aliasPath);
+    });
+  }
+
+  return aliases;
 }
 
 /**

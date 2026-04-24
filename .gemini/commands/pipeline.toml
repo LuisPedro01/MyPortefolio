@@ -1,0 +1,12 @@
+description = "Fluxo sequencial: Planeamento -> Revisão de Segurança -> Implementação"
+prompt = """
+Atua como o orquestrador principal para realizar o pedido do utilizador: '{{prompt}}'.
+
+Deves seguir rigorosamente esta sequência:
+
+1. **Planeamento:** Invoca o @code-architect para analisar o codebase e gerar um relatório técnico 'step-by-step'.
+2. **Revisão:** Com base no relatório do arquiteto, invoca o @security-reviewer para validar o plano, identificar vulnerabilidades e sugerir melhorias.
+3. **Implementação:** Após a validação, invoca o @code-implementer para executar as mudanças no código, integrando o plano inicial e as correções da revisão.
+
+Mantém-me informado sobre o progresso de cada etapa.
+"""

@@ -4,9 +4,12 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { School } from "@mui/icons-material";
-import { Work } from "@mui/icons-material";
-// import SchoolIcon from "@material-ui/icons/School";
+import { School, Work } from "@mui/icons-material";
+
+import LogoTransferir from "@assets/transferir.png";
+import LogoIPB from "@assets/ipb.png";
+import LogoIPVC from "@assets/logoIPVC.png";
+import LogoVisorAI from "@assets/logoVISORAI.webp";
 
 function Experince() {
   return (
@@ -22,7 +25,7 @@ function Experince() {
             Escola Básica e Secundária de Macedo de Cavaleiros
           </h3>
           <p>Ensino Secundário</p>
-          <img src={require("../assets/transferir.png")} alt="AEMC" />
+          <img src={LogoTransferir} alt="AEMC" />
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
@@ -36,7 +39,7 @@ function Experince() {
           </h3>
           <p>Licenciatura em Engenharia Informática</p>
           <img
-            src={require("../assets/ipb.png")}
+            src={LogoIPB}
             alt="IPB"
             height={250}
             width={200}
@@ -54,7 +57,7 @@ function Experince() {
           </h3>
           <p>Mestrado em Engenharia Informática</p>
           <img
-            src={require("../assets/logoIPVC.png")}
+            src={LogoIPVC}
             alt="IPVC"
             height={250}
             width={200}
@@ -62,7 +65,7 @@ function Experince() {
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
-          className="vertical-timeline-elemental--education"
+          className="vertical-timeline-element--work"
           date="September 2023 - December 2024"
           iconStyle={{ background: "#3e497a", color: "#fff" }}
           icon={<Work />}
@@ -70,7 +73,7 @@ function Experince() {
           <h3 className="vertical-timeline-element-title">Visor-AI</h3>
           <p>Junior Software Developer</p>
           <img
-            src={require("../assets/logoVISORAI.webp")}
+            src={LogoVisorAI}
             alt="VISOR"
             height={250}
             width={300}
@@ -78,7 +81,7 @@ function Experince() {
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
-          className="vertical-timeline-elemental--education"
+          className="vertical-timeline-element--work"
           date="January 2025 - today"
           iconStyle={{ background: "#3e497a", color: "#fff" }}
           icon={<Work />}
@@ -86,7 +89,7 @@ function Experince() {
           <h3 className="vertical-timeline-element-title">Visor-AI</h3>
           <p>Analyst I - Software Developer</p>
           <img
-            src={require("../assets/logoVISORAI.webp")}
+            src={LogoVisorAI}
             alt="VISOR"
             height={250}
             width={300}
